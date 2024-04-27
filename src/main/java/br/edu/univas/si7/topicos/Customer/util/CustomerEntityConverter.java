@@ -7,21 +7,16 @@ import br.edu.univas.si7.topicos.Customer.entities.CustomerEntity;
 
 @Component
 public class CustomerEntityConverter {
-	
+
 	public static CustomerDTO toDTO(CustomerEntity customer) {
-		return new CustomerDTO(
-				customer.getId(),
-				customer.getName(), 
-				customer.getEmail(),
-				customer.getPhoneNumber());
+		System.out.println("toDTO: " + customer);
+		return new CustomerDTO(customer.getId(), customer.getName(), customer.getEmail(), customer.getPhoneNumber(),
+				customer.isActive());
 	}
-	
+
 	public CustomerEntity toEntity(CustomerDTO customer) {
 		System.out.println("toEntity: " + customer);
-		return new CustomerEntity(
-				customer.getId(),
-				customer.getName(), 
-				customer.getEmail(),
-				customer.getPhoneNumber());
+		return new CustomerEntity(customer.getId(), customer.getName(), customer.getEmail(), customer.getPhoneNumber(),
+				customer.isActive());
 	}
 }

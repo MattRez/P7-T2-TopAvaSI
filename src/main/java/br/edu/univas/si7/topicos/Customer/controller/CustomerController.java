@@ -22,45 +22,44 @@ import br.edu.univas.si7.topicos.Customer.util.CustomerEntityConverter;
 @RestController
 @RequestMapping("/api/customer")
 public class CustomerController {
-	
+
 	@Autowired
 	private CustomerService service;
-	
-	
+
 	@GetMapping("")
 	@ResponseStatus(HttpStatus.OK)
 	public List<CustomerDTO> getAllCustomers() {
 		return service.findAll();
 	}
-	
+
 	@GetMapping("/{code}")
-	public CustomerDTO getProductById(@PathVariable Integer code) {
-		CustomerEntity entity = service.findById(code);
+	public CustomerDTO getProductById(@PathVariable Integer id) {
+		CustomerEntity entity = service.findById(id);
 		return CustomerEntityConverter.toDTO(entity);
 	}
-	
+
 	@GetMapping("/active")
 	@ResponseStatus(HttpStatus.OK)
 	public List<CustomerDTO> getAllProductsActive() {
 		return service.findByActive(true);
 	}
-	
+
 	@PostMapping("")
 	@ResponseStatus(HttpStatus.CREATED)
 	public void createCustomer(@RequestBody CustomerDTO customer) {
 		service.createCustomer(customer);
 	}
-	
+
 	@PutMapping("/{code}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void updateCustomer(@RequestBody CustomerDTO dto, @PathVariable Integer code) {
-		service.updateCustomer(dto, code);
+	public void updateCustomer(@RequestBody CustomerDTO dto, @PathVariable Integer id) {
+		service.updateCustomer(dto, id);
 	}
 
 	@DeleteMapping("/{code}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void deleteCustomer(@PathVariable Integer code) {
-		service.deleteCustomer(code);
+	public void deleteCustomer(@PathVariable Integer id) {
+		service.deleteCustomer(id);
 	}
-	
+
 }

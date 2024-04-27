@@ -17,14 +17,16 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-@Getter @Setter
+@Getter
+@Setter
 @ToString
 public class CustomerEntity implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String id;
+	private Integer id;
 	private String name;
 	private String email;
 	private String phoneNumber;
 	private boolean active;
+
 }

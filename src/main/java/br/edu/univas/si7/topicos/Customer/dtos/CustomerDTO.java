@@ -8,11 +8,20 @@ import lombok.ToString;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter @Setter
+@Getter
+@Setter
 @ToString
 public class CustomerDTO {
-	private String id;
+	private Integer id;
 	private String name;
 	private String email;
 	private String phoneNumber;
+	private boolean active;
+	
+	/*
+	name
+	e-mail
+	phone
+	type
+	*/
 }

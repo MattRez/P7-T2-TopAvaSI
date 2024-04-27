@@ -9,7 +9,7 @@ import br.edu.univas.si7.topicos.Customer.entities.CustomerEntity;
 
 @Repository
 public interface CustomerRepository extends JpaRepository<CustomerEntity, Integer> {
-	
+
 	public List<CustomerEntity> findByActive(Boolean active);
-	
+
 }
