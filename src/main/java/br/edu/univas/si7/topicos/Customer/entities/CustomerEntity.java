@@ -28,5 +28,8 @@ public class CustomerEntity implements Serializable {
 	private String email;
 	private String phoneNumber;
 	private boolean active;
+	private long documentNumber;
+
+	// private String type;
 
 }

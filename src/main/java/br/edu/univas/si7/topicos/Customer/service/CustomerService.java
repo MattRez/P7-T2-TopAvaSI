@@ -57,10 +57,10 @@ public class CustomerService {
 
 	private void updateData(CustomerEntity existingObj, CustomerDTO newObj) {
 		existingObj.setName(newObj.getName());
-		existingObj.setName(newObj.getName());
-		existingObj.setName(newObj.getName());
-		existingObj.setName(newObj.getName());
-		existingObj.setName(newObj.getName());
+		existingObj.setEmail(newObj.getEmail());
+		existingObj.setPhoneNumber(newObj.getPhoneNumber());
+		existingObj.setActive(newObj.isActive());
+		existingObj.setDocumentNumber(newObj.getDocumentNumber());
 	}
 
 	public void deleteCustomer(Integer code) {
@@ -75,4 +75,9 @@ public class CustomerService {
 			throw new CustomerException("Can not delete a Product with dependencies constraints.");
 		}
 	}
+	
+	//
+	//
+	
+	
 }

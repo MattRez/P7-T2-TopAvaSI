@@ -17,11 +17,8 @@ public class CustomerDTO {
 	private String email;
 	private String phoneNumber;
 	private boolean active;
-	
-	/*
-	name
-	e-mail
-	phone
-	type
-	*/
+	private long documentNumber;
+
+	// private String type;
+
 }
