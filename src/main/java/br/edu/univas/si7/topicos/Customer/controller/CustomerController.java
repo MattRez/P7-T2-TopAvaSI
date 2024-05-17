@@ -33,14 +33,14 @@ public class CustomerController {
 	}
 
 	@GetMapping("/{code}")
-	public CustomerDTO getProductById(@PathVariable Integer id) {
+	public CustomerDTO getCustomerById(@PathVariable Integer id) {
 		CustomerEntity entity = service.findById(id);
 		return CustomerEntityConverter.toDTO(entity);
 	}
 
 	@GetMapping("/active")
 	@ResponseStatus(HttpStatus.OK)
-	public List<CustomerDTO> getAllProductsActive() {
+	public List<CustomerDTO> getAllCustomerActive() {
 		return service.findByActive(true);
 	}
 

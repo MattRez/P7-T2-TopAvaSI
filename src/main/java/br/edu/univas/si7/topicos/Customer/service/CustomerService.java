@@ -75,9 +75,4 @@ public class CustomerService {
 			throw new CustomerException("Can not delete a Product with dependencies constraints.");
 		}
 	}
-	
-	//
-	//
-	
-	
 }
